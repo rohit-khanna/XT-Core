@@ -1,3 +1,24 @@
+/*
+PURPOSE:      The aim of this stylesheet is to provide the necessray styling to the Sapient Tours RWD Assigment. 
+              This stylesheet is designed keeping in mind the priciples of Responsive Web Design. 
+
+COLOR SCHEME: The following color schmes are used in this sktylesheet.
+  #000    : Background for nav
+  Gradient Color:  #bfecbe, #fff;
+  #fff    : nav text color
+  #fff    : anchor tags text color
+
+  MEDIA QUERIES:  Media Queries are defined for Following breakpoints [Desktop first approach]
+                  max-width: 990px
+                  max-width: 790px
+                  max-width: 600px
+                  max-width: 536px
+                  max-width: 490px
+                  max-width: 440px
+                  max-width: 400px
+*/
+
+/*Reset*/
 html,
 body {
   margin: 0;

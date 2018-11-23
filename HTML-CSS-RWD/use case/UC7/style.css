@@ -1,46 +1,58 @@
+/*
+This is the style sheet for the Tempearature record assignment. This uses the table layout.
+
+COLOR SCHEME:
+
+#f5f5dc   : th,td,table background color
+#000      : table border color
+#e9a16e   : caption background color
+#ffff00   : header row and first column background color
+
+*/
+
 body {
-    margin: 5px 5px;
-  }
-  p {
-    padding: 0;
-    margin: 0;
-  }
-  table,
-  th,
-  td {
-    background-color: beige;
-    border: 2px black solid;
-    border-collapse: collapse;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
-    font-size: 16px;
-  }
-  caption {
-    font-size: 24px;
-    font-weight: bold;
-    background-color: rgb(233, 161, 110);
-    border: 2px black solid;
-  }
-  .highlighted,
-  th {
-    background-color: yellow;
-    font-weight: bold;
-    padding: 0 10px;
-  }
-  .red {
-    color: red;
-    font-weight: bold;
-  }
-  .bold {
-    font-weight: bold;
-  }
-  .italics {
-    font-style: italic;
-    font-size: 12px;
-  }
-  ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    text-align: left;
-  }
+  margin: 5px 5px;
+}
+p {
+  padding: 0;
+  margin: 0;
+}
+table,
+th,
+td {
+  background-color: #f5f5dc;
+  border: 2px black solid;
+  border-collapse: collapse;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  font-size: 16px;
+}
+caption {
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #e9a16e;
+  border: 2px black solid;
+}
+.highlighted,
+th {
+  background-color: #ffff00;
+  font-weight: bold;
+  padding: 0 10px;
+}
+.red {
+  color: red;
+  font-weight: bold;
+}
+.bold {
+  font-weight: bold;
+}
+.italics {
+  font-style: italic;
+  font-size: 12px;
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: left;
+}

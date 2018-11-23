@@ -22,7 +22,7 @@ Create calculator using flexbox layout, which shows how to create complex layout
 Create Home page of [Agoda](https://www.agoda.com)as a Responsive web design. The content is Static.
 
 ### 6. UC6-> RWD Tours Website
-MOdify the Sapient Tours into a responsive web design.
+Modify the Sapient Tours into a responsive web design.
 
 ### 7. UC7-> Table Layout-Temperature records
 Use of table layout to create  a temperature record.

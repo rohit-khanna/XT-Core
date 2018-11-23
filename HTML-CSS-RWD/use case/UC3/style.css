@@ -1,3 +1,13 @@
+/*
+This is the style sheet for Sapient Tours . It is designed as a Fixed width page.
+
+COLOR-SCHEME:
+  Body Gradient        : to bottom,#a9aca7,#fff
+  Box Shadow color     : #747772
+  Nav Background color :  #000;
+  Nav Text color       : #fff
+*/
+
 html,
 body {
   margin: 0;

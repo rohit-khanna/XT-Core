@@ -17,7 +17,7 @@ COLOR SCHEME: The following color schmes are used in this sktylesheet.
   #535050 : Background color for Important Links
   #e7e7e7 : Text Color for data in IMportant Links and Country Links
 
-  MEDIA QUERIES:  Media Queries are defined for Following breakpoints
+  MEDIA QUERIES:  Media Queries are defined for Following breakpoints [Mobile First Approach]
                   min-width: 360px
                   min-width: 600px
                   min-width: 700px

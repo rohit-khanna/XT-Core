@@ -1,43 +1,52 @@
+/**
+This is the style sheet for the Chessboard sample. This demonstrates the use of POsition property.
+
+COLOR SCHEME:
+rgb(255,255,0)  : Border Color of Main element
+rgb(255,0,0)  : Border Color of container element and Small-Box
+#adff2f      : Box border color
+*/
+
 main {
-    border: 5px yellow solid;
-    height: 80vh;
-    padding: 20px;
-  }
+  border: 5px rgb(255, 255, 0) solid;
+  height: 80vh;
+  padding: 20px;
+}
 
-  .container {
-    border: 5px red solid;
-    height: 75vh;
-    position: relative;
-  }
-  .box {
-    position: absolute;
-    width: 150px;
-    height: 100px;
-    border: 5px greenyellow solid;
-  }
+.container {
+  border: 5px red solid;
+  height: 75vh;
+  position: relative;
+}
+.box {
+  position: absolute;
+  width: 150px;
+  height: 100px;
+  border: 5px #adff2f solid;
+}
 
-  .small{
-    position: absolute;
-    width: 120px;
-    height: 90px;
-    left:420px;
-    top:190px;       
-    border: 5px red solid;
-  }
+.small {
+  position: absolute;
+  width: 120px;
+  height: 90px;
+  left: 420px;
+  top: 190px;
+  border: 5px red solid;
+}
 
-  .a {
-    left: 300px;
-    top: 100px;
-  }
-  .b {
-    right: 600px;
-    top: 100px;
-  }
-  .c {
-    left: 300px;
-    bottom: 100px;
-  }
-  .d {
-    right: 600px;
-    bottom: 100px;
-  }
+.a {
+  left: 300px;
+  top: 100px;
+}
+.b {
+  right: 600px;
+  top: 100px;
+}
+.c {
+  left: 300px;
+  bottom: 100px;
+}
+.d {
+  right: 600px;
+  bottom: 100px;
+}

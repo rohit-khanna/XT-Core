@@ -1,42 +1,52 @@
- /*reset*/
- html,
- body {
-   margin: 0;
-   padding: 0;
- }
+/*
+This is the Style Sheet for Calculator using Flexbox technique.
 
- body {
-   width: 330px;
-   margin: 0 auto;
- }
+COLOR-SCHEME:
 
- main {
-   border: 2px solid black;
- }
+border for Main Element      : #000000
+Background color for buttons : #e7e7e7
 
- section {
-   margin: 5px 5px;
- }
+*/
 
- input[type="text"] {
-   width: 290px;
-   padding: 10px 10px;
-   text-align: right;
-   font-size: 18px;
- }
- .flex-container {
-   display: flex;
-   flex-direction: row;
-   flex-wrap: wrap;
- }
- .btn {
-   /* width: 50px;
+/*reset*/
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 330px;
+  margin: 0 auto;
+}
+
+main {
+  border: 2px solid #000000;
+}
+
+section {
+  margin: 5px 5px;
+}
+
+input[type="text"] {
+  width: 290px;
+  padding: 10px 10px;
+  text-align: right;
+  font-size: 18px;
+}
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.btn {
+  /* width: 50px;
    height: 50px; */
-   flex: 70px;
-   margin: 1px 2px;
-   background-color: #e7e7e7;
- }
- .content {
-   padding: 15px 25px;
-   font-size: 18px;
- }
+  flex: 70px;
+  margin: 1px 2px;
+  background-color: #e7e7e7;
+}
+.content {
+  padding: 15px 25px;
+  font-size: 18px;
+}
