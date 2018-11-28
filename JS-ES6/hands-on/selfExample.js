@@ -1,3 +1,6 @@
+/**
+ *  FIRST APPROACH
+ * */
 const video = {
   genre: "sci-fi",
   list: ["a", "b", "c"],
@@ -9,3 +12,17 @@ const video = {
   }
 };
 video.findMovies();
+
+/**
+ *  SECOND APPROACH
+ * */
+const video1 = {
+  genre: "sci-fi",
+  list: ["a", "b", "c"],
+  findMovies() {
+    this.list.forEach(movie => {
+      console.log(this.genre + " " + movie);
+    });
+  }
+};
+video1.findMovies();
