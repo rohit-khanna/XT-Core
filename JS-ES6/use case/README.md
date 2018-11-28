@@ -11,6 +11,6 @@ Create a console based calculator using functions and operators.
    - create a Todo Api , using Arrays and related functions
 
 ### 4. UC4-> Closure- Value caching
-    - Is function is claled witha  same value again and again, the value must be returned 
+   - Is function is claled witha  same value again and again, the value must be returned 
     from cache.
-    - Use a data structure and Closures
+   - Use a data structure and Closures
