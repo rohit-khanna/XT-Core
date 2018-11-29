@@ -14,3 +14,6 @@ Create a console based calculator using functions and operators.
    - Is function is claled witha  same value again and again, the value must be returned 
     from cache.
    - Use a data structure and Closures
+
+### 5. UC5-> Fetch
+   - for the provided GitHib URLs, collect user informations in one call.
