@@ -117,6 +117,13 @@ copyObj.prop4.val = "Modified"; //  Changes All references  :(
 console.log(testObject2);
 //},3000);
 
+/**
+ * EXAMPLE TWO
+ */
+var a = { a: 1, b: 2 };
+var b = { b: 5, c: 5 };
+console.log(Object.assign({}, a, b)); // Output: {a: 1, b: 5, c: 5}
+
 console.log("--------------------------");
 
 /** **************************************************************************************  */
@@ -157,7 +164,7 @@ sameObj2.prop3(); // prints NO
 
 setTimeout(() => {
   delete sameObj2.prop1; // Doesnot Work
-  
+
   console.log(sameObj2);
   console.log("--------------------------");
 }, 1000);

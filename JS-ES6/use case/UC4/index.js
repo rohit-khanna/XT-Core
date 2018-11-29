@@ -15,7 +15,7 @@ function getX() {
   };
 }
 
-let o = new getX();
+let o =  getX();
 o(3);
 o(3);
 o(1);
