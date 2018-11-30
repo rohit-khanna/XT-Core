@@ -17,3 +17,11 @@ Create a console based calculator using functions and operators.
 
 ### 5. UC5-> Fetch
    - for the provided GitHib URLs, collect user informations in one call.
+
+### 6. UC6-> Fetch with Async
+   V1.1
+   - Create an API using await and async
+   - Also create a mock server using 'JSON server'
+        - To Run the Mock Server, go to ../mock-server> and
+        -npm start 
+   - Use this mock server as Data source for CRUD operations on the API. 
