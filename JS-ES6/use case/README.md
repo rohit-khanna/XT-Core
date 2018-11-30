@@ -22,6 +22,9 @@ Create a console based calculator using functions and operators.
    V1.1
    - Create an API using await and async
    - Also create a mock server using 'JSON server'
-        - To Run the Mock Server, go to ../mock-server> and
-        -npm start 
+        - To Run the Mock Server, 
+        use
+        ```
+        /mock-server> npm start
+        ``` 
    - Use this mock server as Data source for CRUD operations on the API. 
