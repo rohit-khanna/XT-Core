@@ -1,0 +1,19 @@
+.btn {
+    padding: 20px;
+    background-color: bisque;
+    cursor: pointer;
+  }
+
+  .btn__text {
+    font-size: 20px;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 800;
+  }
+
+  .btn--red {
+    background-color: red;
+  }
+
+   .btn--yellow {
+    background-color: yellow;
+  }

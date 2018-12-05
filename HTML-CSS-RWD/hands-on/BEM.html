@@ -4,34 +4,17 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>BEM Test</title>
-    <style>
-      .btn {
-        padding: 20px;
-        background-color: bisque;
-        cursor: pointer;
-      }
-
-      .btn__text {
-        font-size: 20px;
-        font-family: "Courier New", Courier, monospace;
-        font-weight: 800;
-      }
-
-      .btn--red {
-        background-color: red;
-      }
-
-       .btn--yellow {
-        background-color: yellow;
-      }
-    </style>
+    <link href="BEMStyle.css"  rel="stylesheet" />
   </head>
   <body>
     <main>
       <button class="btn"><span class="btn__text"> Button1 </span></button>
-      <button class="btn btn--red"><span class="btn__text"> Button2 </span></button>
-      <button class="btn btn--yellow"><span class="btn__text"> Button3 </span></button>
-
+      <button class="btn btn--red">
+        <span class="btn__text"> Button2 </span>
+      </button>
+      <button class="btn btn--yellow">
+        <span class="btn__text"> Button3 </span>
+      </button>
     </main>
   </body>
 </html>
