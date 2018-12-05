@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>DOM Manipulation</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+      integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+      integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+      integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+      integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../JS-ES6/hands-on/SRP-profile-service.js"></script>
+
+    <script>
+      window.onload = function() {
+        console.log(componentObj);
+
+        if (componentObj) {
+          let main = document.getElementById("main");
+          let ol = document.createElement("ol");
+          main.appendChild(ol);
+          componentObj
+            .getProfiles()
+            .then(res =>
+              res.forEach(val => {
+                let li = document.createElement("li");
+                li.innerHTML = `<b>ID: </b> ${val.id}, 
+                      <b>Name:  </b>${val.name}, <b>City: </b>${val.city} `;
+                ol.appendChild(li);
+              })
+            )
+            .catch(err => console.log(err));
+        } else {
+          alert("Service API Not Loaded");
+        }
+      };
+    </script>
+  </head>
+  <body class="container">
+    <header><h1>Profiles</h1></header>
+    <main id="main"></main>
+  </body>
+</html>

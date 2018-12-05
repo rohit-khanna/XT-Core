@@ -184,23 +184,34 @@ class ProfileComponent {
   /**
    * UI method to Fetch Profiles.
    * <p>If id is not supplied, fetches all.</p>
+   * MODIFIED FOR COMSUMPTION FROM UI...
    * @param {*} id identifier for profile
    */
   getProfiles(id) {
-    if (id)
-      this.serviceApi
-        .findByIdAsync(id)
-        .then(res => {
-          this.outputAdaptor.log(res);
-        })
-        .catch(err => this.outputAdaptor.logE(err));
-    else
-      this.serviceApi
-        .findAllAsync()
-        .then(res => {
-          this.outputAdaptor.log(res);
-        })
-        .catch(err => this.outputAdaptor.logE(err));
+    return new Promise((resolve, reject)=> {
+      if (id)
+        this.serviceApi
+          .findByIdAsync(id)
+          .then(res => {
+            this.outputAdaptor.log(res);
+            resolve(res);
+          })
+          .catch(err => {
+            this.outputAdaptor.logE(err);
+            reject(err);
+          });
+      else
+        this.serviceApi
+          .findAllAsync()
+          .then(res => {
+            this.outputAdaptor.log(res);
+            resolve(res);
+          })
+          .catch(err => {
+            this.outputAdaptor.logE(err);
+            reject(err);
+          });
+    });
   }
 
   /**
