@@ -34,14 +34,16 @@
         if (componentObj) {
           let main = document.getElementById("main");
           let ol = document.createElement("ol");
+          ol.setAttribute('class','list-group');
           main.appendChild(ol);
           componentObj
             .getProfiles()
             .then(res =>
               res.forEach(val => {
                 let li = document.createElement("li");
-                li.innerHTML = `<b>ID: </b> ${val.id}, 
-                      <b>Name:  </b>${val.name}, <b>City: </b>${val.city} `;
+                li.innerHTML = `<b>${val.id} - </b> 
+                     ${val.name}, ${val.city} `;
+                      li.setAttribute('class','list-group-item');
                 ol.appendChild(li);
               })
             )
