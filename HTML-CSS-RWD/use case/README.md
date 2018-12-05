@@ -26,3 +26,14 @@ Modify the Sapient Tours into a responsive web design.
 
 ### 7. UC7-> Table Layout-Temperature records
 Use of table layout to create  a temperature record.
+
+
+## Week4
+
+### 8. UC8-> Agoda- Using Bootstrap
+Create Home page of [Agoda](https://www.agoda.com) using Bootstrap. The content is Static.
+//ToDo
+
+### 9. UC9-> Tours Website- Using Bootstrap
+Create Sapient Tours website using Bootstrap. The content is Static.
+//ToDo
