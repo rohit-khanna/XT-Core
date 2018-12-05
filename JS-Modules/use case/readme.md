@@ -10,4 +10,12 @@ Build ProfileService App using JS MOdule Pattern:
   browserify profileController.js -o bundle.js 
  `
 #### B. Using ES6 Module Pattern
-    // Todo
+ - We use 'Webpack' as bundler to generate a 'my-first-webpack.bundle.js' file in '/dist' directory and then refer it into index.html.Everytime we make any code changes this bundle.js needs to be regenerated.
+ Command
+ `
+  webpack
+ `
+ or if you want to use the watch mode, use:
+ `
+  webpack --watch
+ `
