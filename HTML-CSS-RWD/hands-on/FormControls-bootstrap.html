@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+
+    <title>Bootstrap Form Controls</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Welcome To Bootstrap Controls</h1>
+
+      <form id="form">
+        <div class="form-group">
+          <label for="name">NAME</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="enter name"
+            id="name"
+            name="name"
+          />
+        </div>
+        <label> <input type="checkbox" id="tea" value="Tea" />Tea</label>
+        <label>
+          <input type="checkbox" id="coffee" value="Coffee" />Coffee</label
+        >
+        <label>
+          <input type="checkbox" id="black_coffee" value="Black Coffee" />Black
+          Coffee</label
+        >
+        <label> <input type="checkbox" id="juice" value="Juice" />Juice</label>
+
+        <div class="radio">
+          <label> <input type="radio" name="gender" value="Male" />Male</label>
+          <label>
+            <input type="radio" name="gender" value="Female" />Female</label
+          >
+        </div>
+
+        <label for="Country">COUNTRY</label>
+        <select name="Country List" id="Country">
+          <option> USA </option>
+          <option selected> INDIA </option>
+          <option> IRAN </option>
+          <option> ISRAEL </option>
+        </select>
+        <input type="submit" value="SUBMIT" />
+      </form>
+      <div id="data"></div>
+    </main>
+    <script>
+      document.getElementById("form").onsubmit = function(event) {
+        event.preventDefault();
+        console.log(event.target);
+        let value = event.target.querySelector("#name").value;
+        value = value + "//Tea:" + event.target.querySelector("#tea").checked;
+        value =
+          value + "//Coffee:" + event.target.querySelector("#coffee").checked;
+        value =
+          value +
+          "//Black-Coffee:" +
+          event.target.querySelector("#black_coffee").checked;
+        value =
+          value + "//Juice:" + event.target.querySelector("#juice").checked;
+        value = value + "//" + event.target.querySelector("#Country").value;
+
+        document.getElementsByName("gender").forEach(val => {
+          value = value + "//" + val.value + ":" + val.checked;
+        });
+
+        document.getElementById("data").innerText = value;
+      };
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
