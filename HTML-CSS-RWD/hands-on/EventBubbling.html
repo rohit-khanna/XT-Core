@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Event Bubbling</title>
+    <style>
+      div {
+        padding: 40px 20px;
+        color: black;
+        font-size: 14px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      #outer {
+        background-color: rgb(221, 159, 78);
+      }
+      #middle {
+        background-color: rgb(43, 226, 67);
+      }
+
+      #inner {
+        background-color: rgb(119, 0, 255);
+      }
+      .bigger {
+        font-size: 18px;
+        font-family: "Lucida Sans", "Lucida Sans Regular", Geneva, Verdana,
+          sans-serif;
+        color: rgb(247, 245, 245);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="outer">
+      OUTER
+      <div id="middle">
+        Middle
+        <div id="inner">Inner</div>
+      </div>
+    </div>
+    <script>
+      document.getElementById("outer").addEventListener("click", function(e) {
+        console.log("Outer Clicked");
+        console.log(e.currentTarget);
+        console.log(e.target);
+      });
+
+      document.getElementById("middle").addEventListener("click", function(e) {
+        console.log("Middle Clicked");
+        console.log(e.currentTarget);
+        console.log(e.target);
+      });
+
+      document.getElementById("inner").addEventListener("click", function(e) {
+        console.log("Inner Clicked");
+        console.log(e.currentTarget);
+        console.log(e.target);
+        //e.stopPropagation();  // UNcomment and PLay ARound
+        //e.stopImmediatePropagation(); // UNcomment and PLay ARound
+      });
+      document.getElementById("outer").addEventListener("click", function(e) {
+        console.log("Font Change Of OUter");
+        e.currentTarget.setAttribute("class", "bigger");
+      });
+
+      document.getElementById("middle").addEventListener("click", function(e) {
+        console.log("Font Change Of Middle");
+        e.currentTarget.setAttribute("class", "bigger");
+      });
+
+      document.getElementById("inner").addEventListener("click", function(e) {
+        console.log("Font Change Of Inner");
+        e.currentTarget.setAttribute("class", "bigger");
+      });
+    </script>
+  </body>
+</html>
