@@ -5,7 +5,7 @@ User enters the amount(whole numbers only) needed in the text field. On clicking
 
 
  #### User Interface
- ![UI for ATM dispenser](https://github.com/rohit-khanna/XT-Core/blob/master/Assignments/ATM%20Module/UI.PNG)
+ ![UI for ATM dispenser](https://github.com/rohit-khanna/XT-Core/blob/master/Assignments/ATM-Module/UI.PNG)
 
 
  ##### Contents
