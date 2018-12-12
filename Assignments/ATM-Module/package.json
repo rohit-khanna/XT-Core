@@ -1,0 +1,14 @@
+{
+  "name": "atm-module",
+  "version": "1.0.0",
+  "description": "this is the module for the assignment for ATM Dispenser",
+  "main": "bundle.js",
+  "scripts": {
+    "test": "jasmine spec/atm-dispenserSpec.js"
+  },
+  "author": "Rohit Khanna",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine": "^3.3.1"
+  }
+}

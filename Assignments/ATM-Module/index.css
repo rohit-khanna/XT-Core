@@ -1,0 +1,178 @@
+/*
+PURPOSE:      The aim of this styleshete is to provide the necessray styling for the ATM Dispenser Module. 
+              This stylesheet is designed keeping in mind the priciples of Responsive Web Design. 
+
+COLOR SCHEME: The following color schmes are used in this sktylesheet.
+body-background-color       :   #e9ecef
+left-panel-background-color :   #fff
+font-color                  :   #000
+input-label color           :   #adaaaa
+button background color     :   #007bff
+
+
+MEDIA-QUERIES :   min-width: 550px, min-width: 910px
+ 
+*/
+
+/* reset */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  font-size: 16px;
+  margin: 0 auto;
+  background-color: #e9ecef;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+  width: 100%;
+  margin: 5% auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 1%;
+}
+
+table {
+  width: 100%;
+}
+table,
+tr,
+td {
+  border-collapse: collapse;
+}
+
+input[type="number"] {
+  padding: 0.6rem 0.6rem;
+  display: block;
+  width: 100%;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="number"]:focus {
+  outline-offset: 0;
+}
+
+.left-pane,
+.right-pane {
+  flex: 1 1 100%;
+  margin: 0 auto;
+  padding: 1em 1em 1em 1em;
+}
+
+.left-pane {
+  border: 1px #fff solid;
+  background-color: #fff;
+  box-shadow: 1px 5px 1px #d7d7d7;
+}
+
+.left-pane__heading {
+  margin-bottom: 1em;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.left-pane__money {
+  border-radius: 0.4rem;
+  border: 2px solid #e9ecef;
+  outline: none;
+  text-align: right;
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+.left-pane__moneylabel {
+  color: #adaaaa;
+  display: block;
+  font-size: 0.7em;
+  margin-bottom: 1em;
+}
+
+.left-pane__submit {
+  cursor: pointer;
+  border: 1px solid #007bff;
+  background-color: #007bff;
+  color: #fff;
+  width: 100%;
+  border-radius: 0.1rem;
+  padding: 0.8rem 0.6rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.disabled {
+  background-color: rgba(0, 123, 255, 0.3);
+  border: none;
+  cursor: not-allowed;
+}
+
+.right-pane {
+  font-size: 0.9rem;
+  padding: 1em 0.5em;
+}
+
+.row {
+  border-bottom: 1px solid #d7d7d7;
+  padding: 0.5rem 0.4rem;
+  text-align: left;
+  display: block;
+}
+
+.row:last-child {
+  border-bottom: 2px solid #d7d7d7;
+}
+
+tfoot > .row {
+  font-weight: bold;
+  padding: 1rem 0.4rem;
+}
+
+.row > td {
+  display: inline-block;
+  width: 49%;
+}
+
+tfoot .row > td {
+  width: 100%;
+}
+
+@media screen and (min-width: 550px) {
+  main {
+    width: 100%;
+    margin: 5% auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 10%;
+  }
+}
+
+@media screen and (min-width: 910px) {
+  main {
+    width: 90%;
+    margin: 1% auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 910px) {
+  .left-pane,
+  .right-pane {
+    flex: 1 1 50%;
+    padding: 2em 2em 1em 2em;
+  }
+}
