@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Shopping Cart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="css/index.css"
+    />
+  </head>
+  <body>
+    <header class="cart-header">
+      <h1 tabindex="1">Your Shopping Bag</h1>
+      <div class="container">
+        <div
+          tabindex="2"
+          aria-label="total items in cart"
+          class="cart-header__item-count"
+        >
+          <span  tabindex="3"  class="cart-header__item-count--value">3</span>
+          <span class="cart-header__item-count--text">items</span>
+        </div>
+        <div class="attribute-headers">
+          <span>Size</span> <span>Qty</span> <span>Price</span>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="section-items">
+        <ul tabindex="4"
+          aria-label="List of Cart Items"
+          class="section-items__list">
+          <li class="section-items__listitem">
+            <article class="section-items__listitem-box">
+              <!-- FB1 -->
+              <img
+                alt="item image"
+                src="images/jacket.jpg"
+                class="item-image"
+              />
+              <section class="item">
+                <!-- FB2 -->
+                <div class="item__detail">
+                  <div tabindex="5"  class="item__detail--description">
+                    Green SHirt is a ,ong text
+                  </div>
+                  <div tabindex="6"  class="item__detail--style">Style#4567</div>
+                  <div tabindex="7"      class="item__detail--color">
+                    Color: <span> Green </span>
+                  </div>
+                </div>
+                <div class="container">
+                  <div tabindex="8" aria-label="Size: Medium" class="item__size">
+                    <span> Size: </span> <span>M</span>
+                  </div>
+                  <div class="item__quantity">
+                    <label for="item__quantity__value"
+                      ><span> qty: </span></label
+                    >
+                    <input
+                      id="item__quantity__value"
+                      type="number"
+                      min="1"
+                      tabindex="9"
+                      name="Quantity of item"
+                      aria-label="item quantity"
+                      class="item__quantity__value"
+                    />
+                  </div>
+                  <div class="item__price">
+                    <div class="price" tabindex="10" aria-label="item price: $79.00">
+                      <div class="price__curr">$</div>
+                      <div class="price__value">79.00</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="section-items__listitem-action lg">
+                  <button class="button button--action rb">Edit</button>
+                  <button class="button button--action rb">X Remove</button>
+                  <button class="button button--action">Save for Later</button>
+                </div>
+              </section>
+            </article>
+            <div class="section-items__listitem-action sm">
+              <button class="button button--action rb">Edit</button>
+              <button class="button button--action rb">X Remove</button>
+              <button class="button button--action">Save for Later</button>
+            </div>
+          </li>
+          <li class="section-items__listitem">
+                <article class="section-items__listitem-box">
+                  <!-- FB1 -->
+                  <img
+                    alt="item image"
+                    src="images/skirt.jpg"
+                    class="item-image"
+                  />
+                  <section class="item">
+                    <!-- FB2 -->
+                    <div class="item__detail">
+                      <div class="item__detail--description">
+                        Green SHirt is a ,ong text
+                      </div>
+                      <div class="item__detail--style">Style#4567</div>
+                      <div class="item__detail--color">
+                        Color: <span> Green </span>
+                      </div>
+                    </div>
+                    <div class="container">
+                      <div class="item__size">
+                        <span> Size: </span> <span>M</span>
+                      </div>
+                      <div class="item__quantity">
+                        <label for="item__quantity__value"
+                          ><span> qty: </span></label
+                        >
+                        <input
+                          id="item__quantity__value"
+                          type="number"
+                          min="1"
+                          class="item__quantity__value"
+                        />
+                      </div>
+                      <div class="item__price">
+                        <div class="price">
+                          <div class="price__curr">$</div>
+                          <div class="price__value">79.00</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="section-items__listitem-action lg">
+                      <button class="button button--action rb">Edit</button>
+                      <button class="button button--action rb">X Remove</button>
+                      <button class="button button--action">Save for Later</button>
+                    </div>
+                  </section>
+                </article>
+                <div class="section-items__listitem-action sm">
+                  <button class="button button--action rb">Edit</button>
+                  <button class="button button--action rb">X Remove</button>
+                  <button class="button button--action">Save for Later</button>
+                </div>
+              </li>
+        </ul>
+      </section>
+      <section class="section-billing">
+        <article class="section-billing__promo">
+          <article class="section-billing__promo__details">
+            <h2>enter Promotion code or Gift Card</h2>
+            <input
+              type="text"
+              id="txtPromo"
+              class="section-billing__promo__details__code"
+            />
+            <button id="btnApplyCode" class="button button--ghost">
+              Apply
+            </button>
+          </article>
+        </article>
+
+        <article class="section-billing__totals">
+          <aside class="section-billing__totals--help lg">
+            <h3>Need help or have questions?</h3>
+            <div>
+              Call customer services at<br />
+              1800-00-987-87
+            </div>
+            <button class="button button--link button--help">
+              Chat with one of our stylists
+            </button>
+
+            <button class="button button--link button--help">
+              See return & exchange policy
+            </button>
+          </aside>
+
+          <section class="section-billing__totals__calc">
+            <div>
+              <label for="subtotal">subtotal</label>
+              <span id="subtotal">
+                <div class="price">
+                  <div class="price__curr">$</div>
+                  <div class="price__value">79.00</div>
+                </div>
+              </span>
+            </div>
+            <div>
+              <label for="shipping"
+                >Estimated Shipping*<br />
+                <span class="info">
+                  your cart amount is over $50.00, <br />
+                  so you get free shipping
+                </span>
+              </label>
+              <span id="shipping">
+                <div class="price">
+                  <div class="price__curr"></div>
+                  <div class="price__value">free</div>
+                </div>
+              </span>
+            </div>
+            <div>
+              <label for="discount">PromoCode </label> <br />
+              <span id="discount">
+                <div class="price">
+                  <div class="price__curr">$</div>
+                  <div class="price__value">-9.00</div>
+                </div></span
+              >
+            </div>
+            <div>
+              <label for="estimatedTotal"
+                >Estimated Total<br />
+                <span class="info">
+                  Tax will be applied at the, <br />
+                  time of checkout
+                </span>
+              </label>
+              <span id="estimatedTotal">
+                <div class="price">
+                  <div class="price__curr">$</div>
+                  <div class="price__value">55.98</div>
+                </div>
+              </span>
+            </div>
+            <div class="checkout-button">
+              <div>
+                <button class="button button--primary">checkout</button>
+              </div>
+              <div>
+                <button class="button button--link">continue shopping</button>
+              </div>
+            </div>
+
+            <div>
+              <span class="info">
+                <img src="images/lock.png" class="lock" alt="secure and safe" />
+
+                Secure Checkout. Shopping is always safe & secure
+              </span>
+            </div>
+          </section>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

@@ -4,7 +4,8 @@
   "description": "this is the package for Shopping Cart",
   "main": "index.js",
   "scripts": {
-    "test": "babel-node spec/run.test.js"
+    "test": "babel-node spec/run.test.js",
+    "build":"sass ./sass/main.scss --watch index.css"
   },
   "author": "",
   "license": "ISC",

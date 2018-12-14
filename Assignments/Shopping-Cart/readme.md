@@ -1,6 +1,6 @@
 # Shopping Cart
-
-## Core Functionality 
+---
+### Core Functionality 
 
 create dynamic Shopping Bag module for an Ecommerce web application.	On first load Shopping bag should have some items. 
 
@@ -12,23 +12,23 @@ create dynamic Shopping Bag module for an Ecommerce web application.	On first lo
 ![UI for Shopping Cart]()
 
 #### Contents
-- **backend/model/CartProduct.js** : This is the Model for Cart Product
+- **backend/model/CartProduct.js** : This is the Model for Cart-Product(Product in UI)
 - **backend/model/Product.js** : This is the Model for  Product (Product in DB)
 - **backend/model/ShoppingCart.js** : This is the Model for ShoppingCart
 - **backend/services/FetchDAL.js** : This is the DAL implementation using [node-fetch](https://www.npmjs.com/package/node-fetch)
-- **backend/services/ProductService.js** : This is the Service for Product(DB) which uses a DAL to interact with DB. 
-- **backend/services/ShoppingCartService.js** : This is the Service for Shopping Cart. UI should interact with this service.
+- **backend/services/ProductService.js** : This is the Service for Product(DB) which uses a DAL, to interact with DB. 
+- **backend/services/ShoppingCartService.js** : This is the Service for Shopping Cart. ***UI will interact with this service.***
 
 
 #### Test Cases
-[Jasmine-JS](https://jasmine.github.io/) has been used for BDD. Test cases can be found at: [spec/backend](/spec/backend)
+[Jasmine-JS](https://jasmine.github.io/) has been used for BDD. Test cases can be found at: **spec/backend**
 
 1.  `npm install`
 2.  `babel-node spec/run.test.js` or `npm run test`
 
-#### Steps to Run
-1. Run the **Mock Server** : [Can be Taken out and Deployed Separately]   
-    - use command line to navigate : [\backend\services\mock-db-server](\backend\services\mock-db-server)
+####  Steps to Run
+1. Run the **Mock Server** : [Can be Taken out and Deployed Separately] - internally uses `json-server` module.  
+    - use command line to navigate : **backend/services/mock-db-server** 
     - make sure `db.json`  is present
     - run `npm start`
     - now Db Server will be available at endpoint: http://localhost:3000/products
@@ -36,4 +36,10 @@ create dynamic Shopping Bag module for an Ecommerce web application.	On first lo
 
 
 ##### References
-- https://fullstack-developer.academy/using-jasmine-with-javascript-es2015/
+- [Jasmine with ES6](https://fullstack-developer.academy/using-jasmine-with-javascript-es2015/)
+- [CSS Modal](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal)
+- [Bootstrap Corousal](https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_carousel)
+- [Jasmine-JS](https://jasmine.github.io/)
+- [node-fetch](https://www.npmjs.com/package/node-fetch)
+- [json-server](https://www.npmjs.com/package/json-server)
+
