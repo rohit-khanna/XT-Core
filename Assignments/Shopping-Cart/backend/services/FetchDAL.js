@@ -8,7 +8,9 @@
  */
 
 "use strict";
+//const fetch = require("node-fetch"); // to run fetch over NodeJS
 const fetch = require("node-fetch"); // to run fetch over NodeJS
+
 
 class FetchDAL {
   /**
@@ -51,6 +53,10 @@ class FetchDAL {
     return res;
   }
 
+  test(){
+    console.log('yess');
+    
+  }
   /**
    * Update the Entity Object
    * @param {*} entityObject

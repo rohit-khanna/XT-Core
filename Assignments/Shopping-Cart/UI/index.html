@@ -11,6 +11,12 @@
       media="screen"
       href="css/index.css"
     />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../dist/my-first-webpack.bundle.js"></script>
   </head>
   <body>
     <header class="cart-header">
@@ -21,7 +27,7 @@
           aria-label="total items in cart"
           class="cart-header__item-count"
         >
-          <span  tabindex="3"  class="cart-header__item-count--value">3</span>
+          <span tabindex="3" class="cart-header__item-count--value">3</span>
           <span class="cart-header__item-count--text">items</span>
         </div>
         <div class="attribute-headers">
@@ -31,9 +37,11 @@
     </header>
     <main>
       <section class="section-items">
-        <ul tabindex="4"
+        <ul
+          tabindex="4"
           aria-label="List of Cart Items"
-          class="section-items__list">
+          class="section-items__list"
+        >
           <li class="section-items__listitem">
             <article class="section-items__listitem-box">
               <!-- FB1 -->
@@ -45,16 +53,20 @@
               <section class="item">
                 <!-- FB2 -->
                 <div class="item__detail">
-                  <div tabindex="5"  class="item__detail--description">
+                  <div tabindex="5" class="item__detail--description">
                     Green SHirt is a ,ong text
                   </div>
-                  <div tabindex="6"  class="item__detail--style">Style#4567</div>
-                  <div tabindex="7"      class="item__detail--color">
+                  <div tabindex="6" class="item__detail--style">Style#4567</div>
+                  <div tabindex="7" class="item__detail--color">
                     Color: <span> Green </span>
                   </div>
                 </div>
                 <div class="container">
-                  <div tabindex="8" aria-label="Size: Medium" class="item__size">
+                  <div
+                    tabindex="8"
+                    aria-label="Size: Medium"
+                    class="item__size"
+                  >
                     <span> Size: </span> <span>M</span>
                   </div>
                   <div class="item__quantity">
@@ -72,7 +84,11 @@
                     />
                   </div>
                   <div class="item__price">
-                    <div class="price" tabindex="10" aria-label="item price: $79.00">
+                    <div
+                      class="price"
+                      tabindex="10"
+                      aria-label="item price: $79.00"
+                    >
                       <div class="price__curr">$</div>
                       <div class="price__value">79.00</div>
                     </div>
@@ -92,59 +108,55 @@
             </div>
           </li>
           <li class="section-items__listitem">
-                <article class="section-items__listitem-box">
-                  <!-- FB1 -->
-                  <img
-                    alt="item image"
-                    src="images/skirt.jpg"
-                    class="item-image"
-                  />
-                  <section class="item">
-                    <!-- FB2 -->
-                    <div class="item__detail">
-                      <div class="item__detail--description">
-                        Green SHirt is a ,ong text
-                      </div>
-                      <div class="item__detail--style">Style#4567</div>
-                      <div class="item__detail--color">
-                        Color: <span> Green </span>
-                      </div>
+            <article class="section-items__listitem-box">
+              <!-- FB1 -->
+              <img alt="item image" src="images/skirt.jpg" class="item-image" />
+              <section class="item">
+                <!-- FB2 -->
+                <div class="item__detail">
+                  <div class="item__detail--description">
+                    Green SHirt is a ,ong text
+                  </div>
+                  <div class="item__detail--style">Style#4567</div>
+                  <div class="item__detail--color">
+                    Color: <span> Green </span>
+                  </div>
+                </div>
+                <div class="container">
+                  <div class="item__size">
+                    <span> Size: </span> <span>M</span>
+                  </div>
+                  <div class="item__quantity">
+                    <label for="item__quantity__value"
+                      ><span> qty: </span></label
+                    >
+                    <input
+                      id="item__quantity__value"
+                      type="number"
+                      min="1"
+                      class="item__quantity__value"
+                    />
+                  </div>
+                  <div class="item__price">
+                    <div class="price">
+                      <div class="price__curr">$</div>
+                      <div class="price__value">79.00</div>
                     </div>
-                    <div class="container">
-                      <div class="item__size">
-                        <span> Size: </span> <span>M</span>
-                      </div>
-                      <div class="item__quantity">
-                        <label for="item__quantity__value"
-                          ><span> qty: </span></label
-                        >
-                        <input
-                          id="item__quantity__value"
-                          type="number"
-                          min="1"
-                          class="item__quantity__value"
-                        />
-                      </div>
-                      <div class="item__price">
-                        <div class="price">
-                          <div class="price__curr">$</div>
-                          <div class="price__value">79.00</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="section-items__listitem-action lg">
-                      <button class="button button--action rb">Edit</button>
-                      <button class="button button--action rb">X Remove</button>
-                      <button class="button button--action">Save for Later</button>
-                    </div>
-                  </section>
-                </article>
-                <div class="section-items__listitem-action sm">
+                  </div>
+                </div>
+                <div class="section-items__listitem-action lg">
                   <button class="button button--action rb">Edit</button>
                   <button class="button button--action rb">X Remove</button>
                   <button class="button button--action">Save for Later</button>
                 </div>
-              </li>
+              </section>
+            </article>
+            <div class="section-items__listitem-action sm">
+              <button class="button button--action rb">Edit</button>
+              <button class="button button--action rb">X Remove</button>
+              <button class="button button--action">Save for Later</button>
+            </div>
+          </li>
         </ul>
       </section>
       <section class="section-billing">

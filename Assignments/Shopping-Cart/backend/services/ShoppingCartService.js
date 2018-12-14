@@ -9,14 +9,20 @@
  *
  */
 
-import CartProduct from "../model/CartProduct";
 import ShoppingCart from "../model/ShoppingCart";
-//const BACKEND_URL = "http://localhost:3000/products";
+import ProductService from "../services/ProductService";
+import FetchDAL from "../services/FetchDAL";
 
 class ShoppingCartService {
   constructor(productService) {
     this.cart = new ShoppingCart();
-    this.productService = productService;
+    if (!productService) {
+
+      let f = new FetchDAL("http://localhost:3000/products");
+      this.productService = new ProductService(f);
+    } else {
+      this.productService = productService;
+    }
   }
 
   /**
@@ -66,15 +72,15 @@ class ShoppingCartService {
 
   /**
    * Apply Promo Code
-   * @param {*} promoCode 
+   * @param {*} promoCode
    */
   applyPromoCode(promoCode) {
     this.cart.applyPromoCode(promoCode);
   }
 
-   /**
+  /**
    * Apply Shipping Charge
-   * @param {number} charge 
+   * @param {number} charge
    */
   applyShippingCharge(charge) {
     this.cart.applyShippingCharge(charge);
