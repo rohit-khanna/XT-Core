@@ -30,15 +30,16 @@ class ShoppingCartService {
   async __loadSampleProductData() {
     //1. Fetch Products
     let productArray = await this.productService.findAllProductsAsync();
-
+    let specialPrice = [0, 24.50, 0, 5.55];
+    let counter = 0;
     //2. Create CartProducts  //3. Initial Fillup of Cart
     productArray.forEach(ele => {
       this.cart.addProduct(
         ele.id,
         ele.availableSizes[0],
         ele.availableColors[0],
-        // parseFloat(Math.random()*25).toFixed(2), //special price
-        10,
+        //parseFloat(Math.random()*25).toFixed(2), //special price
+        specialPrice[counter],
         {
           price: ele.price,
           description: ele.description,
@@ -48,8 +49,9 @@ class ShoppingCartService {
           availableSizes: ele.availableSizes
         }
       );
+      counter++;
     });
-    console.log("ADDED", this.cart.cartProducts.length);
+    // console.log("ADDED", this.cart.cartProducts.length);
   }
 
   /**

@@ -63,6 +63,7 @@ class ShoppingCart {
    */
   removeProduct(id) {
     let product = this.cartProducts.find(x => x.id == id);
+    console.log(id);
 
     // adjust the Totals
     for (let i = 0; i < product.quantity; i++) {
@@ -70,8 +71,9 @@ class ShoppingCart {
       this.decrementSubTotal(product);
     }
     //remove from Cart
-    let index = this.cartProducts.findIndex(p => p.id === id);
-    this.cartProducts.splice(index, 1, undefined);
+    let index = this.cartProducts.findIndex(p => p.id == id);
+    this.cartProducts.splice(index, 1);
+    console.log(this.cartProducts);
   }
 
   /**
@@ -92,7 +94,7 @@ class ShoppingCart {
       let diff = newQty - product.quantity;
 
       if (diff == 0) {
-        throw new Error("NOT HANDLED");
+        // do nothing
       } else {
         for (let i = 0; i < diff; i++) {
           diff > 0
@@ -112,7 +114,7 @@ class ShoppingCart {
       product.specialPrice != 0
         ? product.specialPrice
         : product.prodDetails.price;
-    console.log("ST", this.subTotal,product.specialPrice,product.prodDetails.price);
+    //   console.log("ST", this.subTotal,product.specialPrice,product.prodDetails.price);
 
     //calculate Estmated Total
     this.calculateEstimatedTotal();
@@ -136,12 +138,13 @@ class ShoppingCart {
    * Calculate The Estimated Total for CART
    */
   calculateEstimatedTotal() {
-    console.log(this.subTotal);
+    // console.log(this.subTotal);
 
-    this.estimatedTotal =
-    parseFloat(this.subTotal - this.promoCodeDiscount + this.shippingCharge).toFixed(2);
+    this.estimatedTotal = parseFloat(
+      this.subTotal - this.promoCodeDiscount + this.shippingCharge
+    ).toFixed(2);
 
-    console.log(this.estimatedTotal);
+    //   console.log(this.estimatedTotal);
   }
 
   /**

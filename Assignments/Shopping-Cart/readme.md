@@ -33,7 +33,9 @@ create dynamic Shopping Bag module for an Ecommerce web application.	On first lo
     - run `npm start`
     - now Db Server will be available at endpoint: http://localhost:3000/products
 
-
+2. Run `npm run build`  to build SASS files into css
+3. Run `webpack` to bundle all JS files into one.
+4. Open **index.html** and use the cart...
 
 ##### References
 - [Jasmine with ES6](https://fullstack-developer.academy/using-jasmine-with-javascript-es2015/)

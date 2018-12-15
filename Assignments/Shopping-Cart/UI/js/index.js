@@ -3,9 +3,8 @@ let cart = obj.cart;
 
 $(function() {
   console.log("JQuery Ready");
-
-  registerEventMethods();
   initializeShoppingCartPage();
+  registerEventMethods();
 });
 
 /**
@@ -23,9 +22,20 @@ function registerEventMethods() {
   $("#btnApplyCode").on("click", function(e) {
     let promoCodeValue = $("#txtPromo").val();
     if (promoCodeValue) {
-      alert(promoCodeValue);
+      obj.applyPromoCode(promoCodeValue);
+      updateUITotals();
+      $("#discount")
+        .siblings("label")
+        .find($(".info"))
+        .text("code applied: " + promoCodeValue);
     }
   });
+
+  /**
+   * MODAL EVENTS
+   *
+   */
+  $("#myModal").on("click", function() {});
 }
 
 /**
@@ -33,7 +43,6 @@ function registerEventMethods() {
  */
 async function initializeShoppingCartPage() {
   let c = await fetchServerCartInstance();
-  console.log(cart);
 
   if (cart) {
     //1. Create List Items
@@ -58,16 +67,152 @@ function createItemList() {
     let listItem = getListItemHTML(prod);
     itemsList.append(listItem);
   });
+
+  //register events
+  $(".section-items__listitem-action").on("click", function(event) {
+    console.log(event.currentTarget.dataset.id);
+  
+    if (event.target.name == "edit") {
+      setModalData(event.currentTarget.dataset.id);
+      document.getElementById("myModal").style.display = "block";
+    } else if (event.target.name == "remove") {
+      removeProductFromCart(event.currentTarget.dataset.id);
+    }
+  });
+
+  $(".close").on("click", function() {
+    document.getElementById("myModal").style.display = "none";
+  });
+
+  $(".item__quantity__value").on("change", function(event) {
+    let listItemID =
+      event.target.parentNode.parentNode.parentNode.parentNode.parentNode.id;
+
+    obj.changeProductQuanity(listItemID, event.target.value);
+    console.log(cart.cartProducts);
+
+    updateUITotals();
+  });
 }
 
+function removeProductFromCart(productId) {
+  
+  cart.removeProduct(productId)
+  $("#" + productId).remove();
+  updateUITotals();
+  console.log(cart.cartProducts);
+}
 /**
  * function to update the UI totals
  */
 function updateUITotals() {
   $(".cart-header__item-count--value").text(cart.itemCount);
-  $("#subtotal>.price>.price__value").text(parseFloat(cart.subTotal).toFixed(2));
-  $("#discount>.price>.price__value").text(cart.promoCodeDiscount);
+  $("#subtotal>.price>.price__value").text(
+    parseFloat(cart.subTotal).toFixed(2)
+  );
+  $("#discount>.price>.price__value").text(
+    parseFloat(-1 * cart.promoCodeDiscount).toFixed(2)
+  );
   $("#estimatedTotal>.price>.price__value").text(cart.estimatedTotal);
+}
+
+function setModalData(id) {
+  let product = cart.cartProducts.find(x => x.id == id);
+  console.log(product);
+
+  if (product) {
+    //set description
+    $(".modal-content__container__details__description").text(
+      product.prodDetails.description
+    );
+
+    //set price
+    $(".modal-content__container__details__price .price >.price__value").text(
+      product.prodDetails.price
+    );
+
+    $(".modal-content__container__image>img").attr(
+      "src",
+      product.prodDetails.image
+    );
+
+    //set Available Sizes List
+    $("#availableSizes").empty();
+    product.prodDetails.availableSizes.forEach(ele => {
+      $("#availableSizes").append(
+        `<option value=${ele}  ${
+          product.size == ele ? "selected" : ""
+        }>${ele}</option>`
+      );
+    });
+
+    //set Quantity
+    $("select#quantity").empty();
+    [1, 2, 3, 4, 5].forEach(ele => {
+      $("select#quantity").append(
+        `<option value=${ele}  ${
+          product.quantity == ele ? "selected" : ""
+        }>QTY:${ele}</option>`
+      );
+    });
+
+    //set Available Colours
+    $(".modal-content__container__details__colors").empty();
+    product.prodDetails.availableColors.forEach(ele => {
+      $(".modal-content__container__details__colors").append(
+        `<span data-color=${ele} title=${ele} class="box-color  ${
+          ele == product.color ? "box-color--selected" : ""
+        } box-color--${ele.toLowerCase()} ">&nbsp;</span>`
+      );
+    });
+
+    //register Events
+    $(".modal-content__container__details__colors").on("click", function(e) {
+      //unselect current
+      $(".box-color--selected").removeClass("box-color--selected");
+
+      //select the new
+      e.target.classList.add("box-color--selected");
+    });
+
+    $(".modal-content__container__details__EDIT>button").on(
+      "click",
+      function() {
+        cart.editProduct(
+          id,
+          $(".box-color--selected")[0].dataset.color,
+          $("#availableSizes")[0].value,
+          $("#quantity")[0].value
+        );
+
+        // reload specific Preoduct Data
+        reloadProductItemData(product);
+
+        //2. Update UI Totals
+        updateUITotals();
+
+        document.getElementById("myModal").style.display = "none";
+      }
+    );
+  } // end if
+} // end setModalData
+
+function reloadProductItemData(product) {
+  let listItem = $(".section-items__listitem").filter(function(index) {
+    return this.dataset.id == product.id;
+  });
+
+  listItem
+    .find(".item__detail--color")
+    .find("span")
+    .text(product.color);
+
+  listItem
+    .find(".item__size")
+    .find("span:last")
+    .text(product.size);
+
+  listItem.find(".item__quantity__value").val(product.quantity);
 }
 
 /**
@@ -79,49 +224,15 @@ async function fetchServerCartInstance() {
   return new Promise(async (resolve, reject) => {
     // var cartInstance = new ShoppingCartService("");
     //console.log(this.cartInstance);
-    console.log("INsode");
 
     let c = await obj.__loadSampleProductData();
-    debugger;
+
+    console.log(cart);
+
     resolve(c);
   });
 }
 
-function getMockData() {
-  let obj = {
-    cartProducts: [
-      {
-        id: 909090,
-        quantity: 1,
-        specialPrice: 67.88,
-        size: "M",
-        color: "RED",
-        description: "Green Shirt",
-        price: 150,
-        image: "images/jacket.jpg",
-        style: "1212"
-      },
-      {
-        id: 909091,
-        quantity: 1,
-        specialPrice: 0,
-        size: "M",
-        color: "BLACK",
-        description: "Green Skirt",
-        price: 150,
-        image: "images/skirt.jpg",
-        style: "1212"
-      }
-    ],
-    itemCount: 2,
-    subTotal: 500.05,
-    shippingCharge: 0,
-    estimatedTotal: 500.76,
-    promoCodeDiscount: 0
-  };
-
-  return obj;
-}
 
 /**
  * Function to Create and return
@@ -172,6 +283,7 @@ function getListItemHTML({
             id="item__quantity__value"
             type="number"
             min="1"
+            max="5"
             tabindex="9"
   value=${quantity}
             name="Quantity of item"
@@ -188,32 +300,38 @@ function getListItemHTML({
           ${
             specialPrice > 0
               ? ` <span class="price__curr--strike">$</span>
-          <span class="price__value--strike"><s>${prodDetails.price}</s></span>
+          <span class="price__value--strike"><s>${parseFloat(
+            prodDetails.price
+          ).toFixed(2)}</s></span>
             <p>
             <div class="price__curr">$</div>
-            <div class="price__value">${specialPrice}</div>
+            <div class="price__value">${parseFloat(specialPrice).toFixed(
+              2
+            )}</div>
             </p>
           </div>`
               : `
             <div class="price__curr">$</div>
-            <div class="price__value">${prodDetails.price}</div>
+            <div class="price__value">${parseFloat(prodDetails.price).toFixed(
+              2
+            )}</div>
          
           </div>`
           }
          
         </div>
       </div>
-      <div class="section-items__listitem-action lg">
-        <button class="button button--action rb">Edit</button>
-        <button class="button button--action rb">X Remove</button>
-        <button class="button button--action">Save for Later</button>
+      <div class="section-items__listitem-action lg" data-id=${id} >
+        <button name="edit" class="button button--action rb">Edit</button>
+        <button name="remove" class="button button--action rb">X Remove</button>
+        <button name="save" class="button button--action">Save for Later</button>
       </div>
     </section>
   </article>
-  <div class="section-items__listitem-action sm">
-    <button class="button button--action rb">Edit</button>
-    <button class="button button--action rb">X Remove</button>
-    <button class="button button--action">Save for Later</button>
+  <div class="section-items__listitem-action sm" data-id=${id}>
+    <button name="edit" class="button button--action rb">Edit</button>
+    <button name="remove" class="button button--action rb">X Remove</button>
+    <button name="save" class="button button--action">Save for Later</button>
   </div>
 </li>`;
 }

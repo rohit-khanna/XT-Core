@@ -31,7 +31,7 @@
           <span class="cart-header__item-count--text">items</span>
         </div>
         <div class="attribute-headers">
-          <span>Size</span> <span>Qty</span> <span>Price</span>
+          <span>Size</span> <span>Qty</span> <span title="Per Item Price">Price</span>
         </div>
       </div>
     </header>
@@ -41,10 +41,7 @@
           tabindex="4"
           aria-label="List of Cart Items"
           class="section-items__list"
-        >
-        
-         
-        </ul>
+        ></ul>
       </section>
       <section class="section-billing">
         <article class="section-billing__promo">
@@ -103,7 +100,11 @@
               </span>
             </div>
             <div>
-              <label for="discount">PromoCode </label> <br />
+              <label for="discount"
+                >PromoCode <br />
+                <span class="info"> </span>
+              </label>
+              <br />
               <span id="discount">
                 <div class="price">
                   <div class="price__curr">$</div>
@@ -115,7 +116,7 @@
               <label for="estimatedTotal"
                 >Estimated Total<br />
                 <span class="info">
-                  Tax will be applied at the, <br />
+                  Tax will be applied at the<br />
                   time of checkout
                 </span>
               </label>
@@ -145,6 +146,45 @@
           </section>
         </article>
       </section>
+
+      <!-- The Modal -->
+      <div id="myModal" class="modal" data-id="0">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+
+          <div class="modal-content__container">
+            <div class="modal-content__container__details">
+              <div class="modal-content__container__details__description">
+                --description--
+              </div>
+              <div class="modal-content__container__details__price">
+                <div class="price">
+                  <div class="price__curr">$</div>
+                  <div class="price__value">XX.00</div>
+                </div>
+              </div>
+              <div class="modal-content__container__details__colors">
+               
+              </div>
+              <div class="modal-content__container__details__size-qty">
+                <select id="availableSizes">
+                 
+                </select>
+                <select id="quantity">
+                  <option>QTY:18</option>  
+                </select>
+              </div>
+              <div class="modal-content__container__details__EDIT">
+                <button class="button button--primary">EDIT</button>
+              </div>
+            </div>
+            <div class="modal-content__container__image">
+              <img alt="item image" src="images/skirt.jpg" />
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
   </body>
 </html>
