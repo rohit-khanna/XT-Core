@@ -9,6 +9,7 @@
 "use strict";
 
 import CartProduct from "./CartProduct";
+import { debug } from "util";
 
 class ShoppingCart {
   constructor() {
@@ -26,8 +27,9 @@ class ShoppingCart {
    * @param {*} id
    * @param {*} specialPrice
    */
-  addProduct(id, size, color, specialPrice) {
+  addProduct(id, size, color, specialPrice, otherDetails) {
     let newProduct = new CartProduct(id, size, color, specialPrice);
+    newProduct.prodDetails = otherDetails;
     this.cartProducts.push(newProduct);
     this.itemCount++;
     this.incrementSubTotal(newProduct);
@@ -107,9 +109,10 @@ class ShoppingCart {
    */
   incrementSubTotal(product) {
     this.subTotal +=
-      product.specialPrice != -1
+      product.specialPrice != 0
         ? product.specialPrice
-        : product.getProductPrice();
+        : product.prodDetails.price;
+    console.log("ST", this.subTotal,product.specialPrice,product.prodDetails.price);
 
     //calculate Estmated Total
     this.calculateEstimatedTotal();
@@ -121,9 +124,9 @@ class ShoppingCart {
    */
   decrementSubTotal(product) {
     this.subTotal -=
-      product.specialPrice != -1
+      product.specialPrice != 0
         ? product.specialPrice
-        : product.getProductPrice();
+        : product.prodDetails.price;
 
     //calculate Estmated Total
     this.calculateEstimatedTotal();
@@ -133,8 +136,12 @@ class ShoppingCart {
    * Calculate The Estimated Total for CART
    */
   calculateEstimatedTotal() {
+    console.log(this.subTotal);
+
     this.estimatedTotal =
-      this.subTotal - this.promoCodeDiscount + this.shippingCharge;
+    parseFloat(this.subTotal - this.promoCodeDiscount + this.shippingCharge).toFixed(2);
+
+    console.log(this.estimatedTotal);
   }
 
   /**
@@ -165,10 +172,9 @@ class ShoppingCart {
     }
   }
 
-
   /**
    * Apply Shipping Charge
-   * @param {number} charge 
+   * @param {number} charge
    */
   applyShippingCharge(charge) {
     this.shippingCharge = parseFloat(charge);

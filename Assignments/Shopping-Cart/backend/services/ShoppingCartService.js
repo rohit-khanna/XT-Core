@@ -17,7 +17,6 @@ class ShoppingCartService {
   constructor(productService) {
     this.cart = new ShoppingCart();
     if (!productService) {
-
       let f = new FetchDAL("http://localhost:3000/products");
       this.productService = new ProductService(f);
     } else {
@@ -38,9 +37,19 @@ class ShoppingCartService {
         ele.id,
         ele.availableSizes[0],
         ele.availableColors[0],
-        ele.price
+        // parseFloat(Math.random()*25).toFixed(2), //special price
+        10,
+        {
+          price: ele.price,
+          description: ele.description,
+          style: ele.style,
+          image: ele.imgUrl,
+          availableColors: ele.availableColors,
+          availableSizes: ele.availableSizes
+        }
       );
     });
+    console.log("ADDED", this.cart.cartProducts.length);
   }
 
   /**
@@ -86,5 +95,6 @@ class ShoppingCartService {
     this.cart.applyShippingCharge(charge);
   }
 }
+const obj = new ShoppingCartService();
 
-export default ShoppingCartService;
+export default obj;

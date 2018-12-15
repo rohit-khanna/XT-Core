@@ -17,6 +17,7 @@ class CartProduct {
     this.specialPrice = specialPrice;
     this.size = size;
     this.color = color;
+    this.prodDetails= {};
   }
 
  

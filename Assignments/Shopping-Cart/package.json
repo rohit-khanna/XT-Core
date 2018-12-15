@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "babel-node spec/run.test.js",
-    "build":"sass ./sass/main.scss --watch index.css"
+    "build":"sass ./UI/css/sass/main.scss --watch ./UI/css/index.css"
   },
   "author": "",
   "license": "ISC",

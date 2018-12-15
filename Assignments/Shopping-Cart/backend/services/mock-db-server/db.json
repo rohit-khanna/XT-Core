@@ -1,3 +1,32 @@
 {
-  "products": []
+  "products": [
+    
+    {
+      "id": 9999,
+      "description": "Men Formal Suit",
+      "availableColors": ["BLACK", "NAVY"],
+      "availableSizes": ["M", "S", "L", "XL"],
+      "style": "Style#12356",
+      "price": 148.99,
+      "imgUrl": "images/jacket.jpg"
+    },
+    {
+      "id": 99999,
+      "description": "Men Tapered Fit jeans",
+      "availableColors": ["BLACK", "BLUE"],
+      "availableSizes": ["M", "S", "L", "XL", "XXL"],
+      "style": "Style#44356",
+      "price": 48.99,
+      "imgUrl": "images/shirt.jpg"
+    },
+    {
+      "id": 999999,
+      "description": "Men Slim Fit Formal Shirt",
+      "availableColors": ["BLACK", "BLUE", "BEIGE", "MAROON"],
+      "availableSizes": ["M", "S", "L", "XL", "XXL", "XS"],
+      "style": "Style#9856",
+      "price": 8.99,
+      "imgUrl": "http://google.com"
+    }
+  ]
 }

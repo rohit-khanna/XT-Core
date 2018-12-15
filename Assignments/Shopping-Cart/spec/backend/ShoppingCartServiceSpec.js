@@ -53,12 +53,13 @@ describe("shopping-cart-service", function() {
       );
     }); // end beforewach
 
-    it("should return Shopping Cart Object with 2 products", async function() {
+    fit("should return Shopping Cart Object with 2 products", async function() {
       //Arrange
       shoppingCartService = new ShoppingCartService(productService);
       await shoppingCartService.__loadSampleProductData();
       let cart = shoppingCartService.cart;
       //Act //Assert
+console.log(cart);
 
       expect(cart.cartProducts.findIndex(e => e.id == 909091) >= 0).toBe(true);
       expect(cart.cartProducts.findIndex(e => e.id == 909091) >= 0).toBe(true);
