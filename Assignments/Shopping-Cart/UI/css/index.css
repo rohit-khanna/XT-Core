@@ -11,7 +11,7 @@ RESET
   box-sizing: border-box;
 }
 
-body {
+body, input {
   max-width: 980px;
   margin: 0 auto;
   background-color: #fff;
@@ -91,6 +91,10 @@ h2 {
 .button--ghost:hover {
   background-color: #007bff;
   color: #fff;
+}
+.button:disabled {
+  background-color: #e9e3e3;
+  cursor: not-allowed;
 }
 .button--link {
   background-color: transparent;
@@ -290,30 +294,6 @@ h2 {
     /* Black w/ opacity */
   }
 
-  /* Modal Content */
-  .modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 70%;
-  }
-
-  /* The Close Button */
-  .close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-
-  .close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
   .modal-content__container {
     display: flex;
     width: 80%;
@@ -403,10 +383,6 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
-
-input[type=number] {
-  -moz-appearance: textfield;
 }
 
 input[type=number]:focus {

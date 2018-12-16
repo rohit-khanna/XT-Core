@@ -41,8 +41,8 @@ class ShoppingCart {
    */
   incrementProductQuantity(id) {
     let product = this.cartProducts.find(x => x.id == id);
-    product.quantity++;
-    this.itemCount++;
+    product.quantity += 1;
+    this.itemCount += 1;
     this.incrementSubTotal(product);
   }
 
@@ -51,9 +51,11 @@ class ShoppingCart {
    * @param {*} id cartProductId
    */
   decrementProductQuantity(id) {
+  //  console.log('enter');
+    
     let product = this.cartProducts.find(x => x.id == id);
-    product.quantity--;
-    this.itemCount--;
+    product.quantity -= 1;
+    this.itemCount -= 1;
     this.decrementSubTotal(product);
   }
 
@@ -63,7 +65,7 @@ class ShoppingCart {
    */
   removeProduct(id) {
     let product = this.cartProducts.find(x => x.id == id);
-    console.log(id);
+  //  console.log(id);
 
     // adjust the Totals
     for (let i = 0; i < product.quantity; i++) {
@@ -73,7 +75,7 @@ class ShoppingCart {
     //remove from Cart
     let index = this.cartProducts.findIndex(p => p.id == id);
     this.cartProducts.splice(index, 1);
-    console.log(this.cartProducts);
+  //  console.log(this.cartProducts);
   }
 
   /**
@@ -92,14 +94,13 @@ class ShoppingCart {
     }
     if (newQty) {
       let diff = newQty - product.quantity;
+    //  console.log("diff", diff);
 
       if (diff == 0) {
         // do nothing
       } else {
-        for (let i = 0; i < diff; i++) {
-          diff > 0
-            ? this.incrementProductQuantity(id)
-            : this.decrementProductQuantity(id);
+        for (let i = 0; i < Math.abs(diff); i++) {
+          diff > 0  ? this.incrementProductQuantity(id)    : this.decrementProductQuantity(id);
         }
       }
     }

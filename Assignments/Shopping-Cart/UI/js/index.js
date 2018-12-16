@@ -32,6 +32,13 @@ function registerEventMethods() {
   });
 
   /**
+   * Listen to Input Event to enable/disable Apply Button
+   */
+  document.getElementById("txtPromo").addEventListener("input", function(e) {
+    onInputChange(e);
+  });
+
+  /**
    * MODAL EVENTS
    *
    */
@@ -70,8 +77,8 @@ function createItemList() {
 
   //register events
   $(".section-items__listitem-action").on("click", function(event) {
-    console.log(event.currentTarget.dataset.id);
-  
+    // console.log(event.currentTarget.dataset.id);
+
     if (event.target.name == "edit") {
       setModalData(event.currentTarget.dataset.id);
       document.getElementById("myModal").style.display = "block";
@@ -88,19 +95,24 @@ function createItemList() {
     let listItemID =
       event.target.parentNode.parentNode.parentNode.parentNode.parentNode.id;
 
+    //  console.log(event.target.value);
+
     obj.changeProductQuanity(listItemID, event.target.value);
-    console.log(cart.cartProducts);
+    // console.log(cart.cartProducts);
 
     updateUITotals();
   });
 }
 
+/**
+ * function to remove Product from the Cart
+ * @param {*} productId productID to remove
+ */
 function removeProductFromCart(productId) {
-  
-  cart.removeProduct(productId)
+  cart.removeProduct(productId);
   $("#" + productId).remove();
   updateUITotals();
-  console.log(cart.cartProducts);
+  //console.log(cart.cartProducts);
 }
 /**
  * function to update the UI totals
@@ -116,9 +128,13 @@ function updateUITotals() {
   $("#estimatedTotal>.price>.price__value").text(cart.estimatedTotal);
 }
 
+/**
+ * Set MODAL dialog Data
+ * @param {*} id product ID Clicked by User
+ */
 function setModalData(id) {
   let product = cart.cartProducts.find(x => x.id == id);
-  console.log(product);
+  //console.log(product);
 
   if (product) {
     //set description
@@ -197,6 +213,10 @@ function setModalData(id) {
   } // end if
 } // end setModalData
 
+/**
+ * function to Reload Product data when Dialog is closed with changes
+ * @param {*} product new Product Data
+ */
 function reloadProductItemData(product) {
   let listItem = $(".section-items__listitem").filter(function(index) {
     return this.dataset.id == product.id;
@@ -222,17 +242,10 @@ function reloadProductItemData(product) {
 async function fetchServerCartInstance() {
   //cart = getMockData();
   return new Promise(async (resolve, reject) => {
-    // var cartInstance = new ShoppingCartService("");
-    //console.log(this.cartInstance);
-
     let c = await obj.__loadSampleProductData();
-
-    console.log(cart);
-
     resolve(c);
   });
 }
-
 
 /**
  * Function to Create and return
@@ -245,7 +258,6 @@ function getListItemHTML({
   size,
   color,
   prodDetails,
-  price,
   specialPrice
 }) {
   return `<li class="section-items__listitem" data-id=${id} id=${id}>
@@ -322,16 +334,34 @@ function getListItemHTML({
         </div>
       </div>
       <div class="section-items__listitem-action lg" data-id=${id} >
-        <button name="edit" class="button button--action rb">Edit</button>
-        <button name="remove" class="button button--action rb">X Remove</button>
-        <button name="save" class="button button--action">Save for Later</button>
+        <button name="edit" class="button button--action rb" title="Click to Edit">Edit</button>
+        <button name="remove" class="button button--action rb" title="Click to Remove from Cart">X Remove</button>
+        <button name="save" class="button button--action" title="Save for later">Save for Later</button>
       </div>
     </section>
   </article>
   <div class="section-items__listitem-action sm" data-id=${id}>
-    <button name="edit" class="button button--action rb">Edit</button>
-    <button name="remove" class="button button--action rb">X Remove</button>
-    <button name="save" class="button button--action">Save for Later</button>
+    <button name="edit" class="button button--action rb" title="Click to Edit">Edit</button>
+    <button name="remove" class="button button--action rb" title="Click to Remove from cart">X Remove</button>
+    <button name="save" class="button button--action" title="Save for later">Save for Later</button>
   </div>
 </li>`;
+}
+
+/**
+ * Handler for Input Change for Promo Code textbox
+ * @param {*} e event Object
+ */
+function onInputChange(e) {
+  let applyPromoBtn = document.querySelector("#btnApplyCode");
+  let value = e.target.value;
+  console.log(value);
+
+  if (!value) {
+    applyPromoBtn.setAttribute("disabled", true);
+    applyPromoBtn.classList.add("disabled");
+  } else {
+    applyPromoBtn.removeAttribute("disabled");
+    applyPromoBtn.classList.remove("disabled");
+  }
 }

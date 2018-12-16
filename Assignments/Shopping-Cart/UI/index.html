@@ -49,10 +49,10 @@
             <h2>enter Promotion code or Gift Card</h2>
             <input
               type="text"
-              id="txtPromo"
+              id="txtPromo" placeholder="Enter Promo Code"
               class="section-billing__promo__details__code"
             />
-            <button id="btnApplyCode" class="button button--ghost">
+            <button id="btnApplyCode" disabled class="button button--ghost disabled">
               Apply
             </button>
           </article>
@@ -148,7 +148,7 @@
       </section>
 
       <!-- The Modal -->
-      <div id="myModal" class="modal" data-id="0">
+      <dialog id="myModal" class="modal" data-id="0">
         <!-- Modal content -->
         <div class="modal-content">
           <span class="close">&times;</span>
@@ -176,7 +176,7 @@
                 </select>
               </div>
               <div class="modal-content__container__details__EDIT">
-                <button class="button button--primary">EDIT</button>
+                <button class="button button--primary" title="Click to Edit in Cart">EDIT</button>
               </div>
             </div>
             <div class="modal-content__container__image">
@@ -184,7 +184,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </dialog>
     </main>
   </body>
 </html>
