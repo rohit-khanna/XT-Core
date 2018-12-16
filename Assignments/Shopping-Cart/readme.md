@@ -24,6 +24,10 @@ create dynamic Shopping Bag module for an Ecommerce web application.	On first lo
 - **backend/services/FetchDAL.js** : This is the DAL implementation using [node-fetch](https://www.npmjs.com/package/node-fetch)
 - **backend/services/ProductService.js** : This is the Service for Product(DB) which uses a DAL, to interact with DB. 
 - **backend/services/ShoppingCartService.js** : This is the Service for Shopping Cart. ***UI will interact with this service.***
+- **UI/js/index.js** : This is the UI controller. It interacts wirh ShoppingCartService and also registers UI DOM events.
+- **UI/css/fonts**  : This directory contains custom fonts
+- **UI/css/sass**   : This directory contain SASS files, which on 'build' compiles into **UI/css/index.css** css file and a *.map file.*
+- **UI/index.html** : This is the MAIN html Webpage
 
 
 #### Test Cases
