@@ -9,12 +9,12 @@ create dynamic Shopping Bag module for an Ecommerce web application.	On first lo
 
 ### User Interface
 
-![UI for Shopping Cart]((https://github.com/rohit-khanna/XT-Core/blob/master/Assignments/Shopping-Cart/UI-1.PNG))
-![UI for Shopping Cart]((https://github.com/rohit-khanna/XT-Core/blob/master/Assignments/Shopping-Cart/UI-2.PNG))
-![UI for Shopping Cart]((https://github.com/rohit-khanna/XT-Core/blob/master/Assignments/Shopping-Cart/UI-3.PNG))
-![UI for Shopping Cart]((https://github.com/rohit-khanna/XT-Core/blob/master/Assignments/Shopping-Cart/UI-4.PNG))
-![UI for Shopping Cart]((https://github.com/rohit-khanna/XT-Core/blob/master/Assignments/Shopping-Cart/UI-5.PNG))
-![UI for Shopping Cart]((https://github.com/rohit-khanna/XT-Core/blob/master/Assignments/Shopping-Cart/UI-6.PNG))
+![UI for Shopping Cart](https://github.com/rohit-khanna/XT-Core/blob/master/Assignments/Shopping-Cart/UI-1.png)
+![UI for Shopping Cart](https://github.com/rohit-khanna/XT-Core/blob/master/Assignments/Shopping-Cart/UI-2.png)
+![UI for Shopping Cart](https://github.com/rohit-khanna/XT-Core/blob/master/Assignments/Shopping-Cart/UI-3.png)
+![UI for Shopping Cart](https://github.com/rohit-khanna/XT-Core/blob/master/Assignments/Shopping-Cart/UI-4.png)
+![UI for Shopping Cart](https://github.com/rohit-khanna/XT-Core/blob/master/Assignments/Shopping-Cart/UI-5.png)
+![UI for Shopping Cart](https://github.com/rohit-khanna/XT-Core/blob/master/Assignments/Shopping-Cart/UI-6.png)
 
 
 #### Contents
