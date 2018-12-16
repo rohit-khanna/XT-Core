@@ -31,7 +31,7 @@ create dynamic Shopping Bag module for an Ecommerce web application.	On first lo
 
 
 #### Test Cases
-[Jasmine-JS](https://jasmine.github.io/) has been used for BDD. Test cases can be found at: **spec/backend**
+[Jasmine-JS](https://jasmine.github.io/) has been used for BDD. Test cases can be found at: [spec/backend](https://github.com/rohit-khanna/XT-Core/tree/master/Assignments/Shopping-Cart/spec/backend)
 
 1.  `npm install`
 2.  `babel-node spec/run.test.js` or `npm run test`
