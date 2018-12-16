@@ -9,7 +9,13 @@ create dynamic Shopping Bag module for an Ecommerce web application.	On first lo
 
 ### User Interface
 
-![UI for Shopping Cart]()
+![UI for Shopping Cart]((https://github.com/rohit-khanna/XT-Core/blob/master/Assignments/ATM-Module/UI-1.PNG))
+![UI for Shopping Cart]((https://github.com/rohit-khanna/XT-Core/blob/master/Assignments/ATM-Module/UI-2.PNG))
+![UI for Shopping Cart]((https://github.com/rohit-khanna/XT-Core/blob/master/Assignments/ATM-Module/UI-3.PNG))
+![UI for Shopping Cart]((https://github.com/rohit-khanna/XT-Core/blob/master/Assignments/ATM-Module/UI-4.PNG))
+![UI for Shopping Cart]((https://github.com/rohit-khanna/XT-Core/blob/master/Assignments/ATM-Module/UI-5.PNG))
+![UI for Shopping Cart]((https://github.com/rohit-khanna/XT-Core/blob/master/Assignments/ATM-Module/UI-6.PNG))
+
 
 #### Contents
 - **backend/model/CartProduct.js** : This is the Model for Cart-Product(Product in UI)
