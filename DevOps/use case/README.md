@@ -1,6 +1,6 @@
 # Use Cases Details
 
-### 1. UC1->IO Module
+### 1. UC1 ->IO Module
 Store list of customers and their orders into JSON file. (Follow Modular Approach with Service/DAL/UiController)
 Req:
  A. Store All Customers and their orders
@@ -10,7 +10,7 @@ Req:
  `npm start`
 
 
- ### 2. UC1-> Express API
+ ### 2. UC2 -> Express API
 Create REST API for following resource : Profile
 Req:
  - Mock Profile data as Array [id, name,city]
@@ -30,6 +30,19 @@ Also Handle Error and send Messages to Client
  Go To /mock-server and run
  `npm start`
 
- 1. Run Express Server
+ 2. Run Express Server
  Go To / and run
  `npm start`
+
+
+ ### 3. UC3 -> Webpack
+Create Simple Array CRUD operation using lodash library,ES6 and DOM api.
+
+Req: (webpack) and Babel Loader for ES6->ES5
+1. Create Two bundles
+- App bundle => array operations
+- Vendor bundle => lodash library
+
+2. SASS==>CSS==>Style  : Use loaders
+
+3. Use WebpackHTML,WebpackClean plugin
