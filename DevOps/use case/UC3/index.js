@@ -7,6 +7,10 @@ let empArray = [];
 let saveBtn = document.getElementById("btnSave");
 let updateBtn = document.getElementById("btnUpdate");
 
+console.log('IM IN INDEX.js');
+
+
+
 document
   .getElementsByClassName("list")[0]
   .addEventListener("click", function(event) {

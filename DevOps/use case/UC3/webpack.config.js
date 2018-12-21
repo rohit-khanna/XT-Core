@@ -5,7 +5,8 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 module.exports = {
   entry: {
     vendor: "./lodash.js",
-    app: "./index.js"
+    app: "./index.js",
+    home: "./home.js"
   },
   mode: "none",
   output: {
@@ -37,9 +38,13 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(["dist"]),
     new HtmlWebpackPlugin({
-      title: "Custom template",
-      // Load a custom template (lodash by default)
+      title: "Custom template",      
       template: "index.html"
+    }),
+    new HtmlWebpackPlugin({
+      title: "Custom template",
+      filename: "home.html",    
+      template: "home.html"
     })
   ]
 };
